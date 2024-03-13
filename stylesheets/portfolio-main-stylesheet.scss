@@ -1,0 +1,259 @@
+$purple: #c88dd2;
+$pink: #FCAAAB;
+$yellow: #FFF5B6;
+$dark-purple: #2A0031;
+$off-white-transparent: #f5eaeaf1;
+$purple-transparent: #c88dd2b3;
+$pink-transparent: #fcaaab8d;
+$yellow-transparent: #fff5b6c2;
+$dark-purple-transparent: #2a003195;
+
+$pill-radius: 30px;
+
+@mixin subtle-shadow {
+    box-shadow: 1px 1px 5px $dark-purple-transparent;
+}
+
+@keyframes twist {
+    0% {transform: rotateZ(0)}
+    50% {transform: rotateZ(180deg)}
+    100% {transform: rotateZ(360deg)}
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: $dark-purple;
+    background-image: linear-gradient(225deg, $purple, $pink, $yellow);
+    background-size: 100% 110%;
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    padding: 1em 2.5em;
+    z-index: 5;
+    background-color: $off-white-transparent;
+    width: 100%;
+
+    div {
+        display: flex;
+    }
+    div.element-wrapper {
+        width: 100%;
+        justify-content: space-between;
+
+        div.main-menu {
+            align-items: center;
+    
+            p {
+                display: none;
+            }
+            p.mobile-view {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+    
+                img {
+                    height: 3em;
+                    margin-right: 0.5em;
+                }
+            }
+            ul {
+                display: flex;
+                align-items: center;
+                list-style-type: none;
+                padding-left: 4em;
+                position: relative;
+                left: -3.5em;
+    
+                li {
+                    padding: 0.5em 2em;
+                    margin: 0 0.5em;
+                    border-radius: $pill-radius;
+                    transition: background-color 0.3s linear;
+    
+                    a {
+                        text-decoration: none;
+                        color: $dark-purple;
+                        font-weight: 700;
+                    }
+                }
+                li.active {
+                    background-color:$pink;
+                }
+                li:hover {
+                    background-color: $pink-transparent;
+                }
+            }
+        }
+        div.resume-button-container {
+            justify-content: center;
+            align-items: center;
+    
+            a {
+                text-decoration: none;
+                color: $dark-purple;
+                background-color: $yellow-transparent;
+                border-radius: $pill-radius;
+                padding: 0.5em 2em;
+                font-weight: 700;
+                @include subtle-shadow();
+            }
+            a:hover {
+                background-color: $yellow;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    position: fixed;
+    bottom: 2vh;
+    right: 2.5em;
+    z-index: 5;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1.5em;
+
+        img {
+            height: 3em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div.element-wrapper {
+            width: 60%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        position: fixed;
+
+        div.element-wrapper {
+            div.main-menu {
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+
+                    img {
+                        height: 3em;
+                        margin-right: 0.5em;
+                        opacity: 100%;
+                        transition: opacity 0.5s linear;
+                    }
+                    img[alt|="hamburger menu icon"] {
+                        position: absolute;
+                        opacity: 0;
+                    }
+                    img.disappear-menu {
+                        opacity: 0;
+                    }
+                    img.appear-menu {
+                        opacity: 100%;
+                    }
+                    img.twist {
+                        animation-name: twist;
+                        animation-duration:0.5s;
+                        animation-timing-function: linear;
+                    }
+                }
+                p:hover {
+                    cursor: pointer;
+                }
+                ul {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0;
+                    overflow: hidden;
+                    background-color: $off-white-transparent;
+                    transition: height 0.5s ease-in;
+                    padding-left: 0;
+
+                    li {
+                        margin: 1em 0;
+
+                        a {
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+                ul.drop-mobile-menu {
+                    height: 100vh;
+                }
+            }
+        }
+    }
+    footer {
+        bottom: 10vw;
+        right: 55vw;
+        justify-content: flex-end;
+        align-items: flex-end;
+        opacity: 0;
+        transition: opacity 0.5s ease-in 0.2s;
+
+        a {
+            margin-top: 1em;
+        }
+    }
+    footer.show-footer {
+        opacity: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    nav {
+        div.element-wrapper {
+            div.main-menu {
+                p {
+                    img {
+                        height: 2.5em;
+                    }
+                }
+            }
+            div.resume-button-container {
+                a {
+                    font-size: 0.75em;
+                }
+            }
+        }
+    }
+}

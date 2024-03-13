@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio site projects for Abby Poplawski">
+    <title>Projects | AP Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+
+    <link rel="stylesheet" href="stylesheets/projects-stylesheet.css">
+    <script src="js-files/projects-functions.js"></script>
+</head>
+<body onload="pageLoad()">
+    <nav>
+        <div class="element-wrapper">
+            <div class="main-menu">
+                <p>
+                    <img src="images/logos/ap-logo-skinny.png" alt="AP studio logo">
+                    <img src="images/logos/ap-hamburger-menu.png" alt="hamburger menu icon">
+                </p>
+                <ul>
+                    <li><a href="index.html">Hello</a></li>
+                    <li class="active"><a href="projects.html">Projects</a></li>
+                    <li><a href="extras.html">Extras</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="resume-button-container"><a href="Abigail-Poplawski-Resume.pdf" target="_blank">Resume</a></div>
+        </div>
+    </nav>
+
+    <footer>
+        <a href="https://github.com/appop10?tab=repositories" target="_blank"><img src="images/logos/github-icon.png"
+                alt="GitHub logo"></a>
+        <a href="https://www.linkedin.com/in/abigail-poplawski/" target="_blank"><img
+                src="images/logos/linkedin-icon.png" alt="LinkedIn logo"></a>
+    </footer>
+
+    <section id="project-nav-side-bar">
+        <ul>
+            <li><a href="#PTG" onclick="activateManualNavigation('#PTG')" class="active">Pets To Go</a></li>
+            <li><a href="#score-counter" onclick="activateManualNavigation('#score-counter')">Score Counter</a></li>
+            <li><a href="#changing-structures" onclick="activateManualNavigation('#changing-structures')">Changing Structures</a></li>
+            <li><a href="#summit-farms-2" onclick="activateManualNavigation('#summit-farms-2')">Summit Farms 2</a></li>
+            <li><a href="#summit-farms-3" onclick="activateManualNavigation('#summit-farms-3')">Summit Farms 3</a></li>
+            <li><a href="#piggy-bank-financial" onclick="activateManualNavigation('#piggy-bank-financial')">Piggy Bank Financial</a></li>
+            <li><a href="#cookies!" onclick="activateManualNavigation('#cookies!')">Cookies!</a></li>
+            <li><a href="#php-login-and-database" onclick="activateManualNavigation('#php-login-and-database')">PHP Login/Database</a></li>
+            <li><a href="#animations-and-transitions" onclick="activateManualNavigation('#animations-and-transitions')">Animations/Transitions</a></li>
+            <li><a href="#doogies-music-venue" onclick="activateManualNavigation('#doogies-music-venue')">Doogies Music Venue</a></li>
+            <li><a href="#ATP" onclick="activateManualNavigation('#ATP')">All Things Pasta</a></li>
+            <li><a href="#MGDC" onclick="activateManualNavigation('#MGDC')">MGDC Conference</a></li>
+        </ul>
+
+        <p onclick="slideSideNav()"><img src="images/logos/ap-arrow.png" alt="arrow inside of a circle icon"></p>
+    </section>
+
+    <section id="all-projects-container">
+        <div id="PTG">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV101/pets_to_go/index.html#TOP" target="_blank">
+                    <img src="images/projects/PTG_home_page.jpg" alt="screen shot of pets to go home page">
+                    <p>Visit</p>
+                </a>
+                
+                <div class="title-and-skills">
+                    <h3>Pets To Go</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>responsive layout</span>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p>My Intro to HTML/CSS Final where I designed and coded a ficticious pet shelter website with the basic skills I had learned in the course.</p>
+            </div>
+        </div>
+
+        <div id="score-counter">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV221/Skill_tests/skillTest-ScoreCounter.html" target="_blank">
+                    <img src="images/projects/score-counter.jpg" alt="screen shot of score counter homework page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Score Counter</h3>
+                    <p>Skills</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>dynamic content</span>
+                    <span>form input</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">   
+                <p>A skill test that combined my knowledge of manipulating JavaScript arrays via HTML form elements on the page as well as dynamically populating some HTML elements with JavaScript.</p>
+            </div>
+        </div>
+
+        <div id="changing-structures">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV321/assignments/changeStructureExample.html" target="_blank">
+                    <img src="images/projects/change-structures.jpg" alt="screen shot of changing structures homework page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Changing Structures</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>dynamic structures</span>
+                    <span>JavaScript events</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>An exercise where I learned how to manipulate HTML element classes and other attributes with JavaScript to dynamically change the structure of a webpage.</p>
+            </div>
+        </div>
+
+        <div id="summit-farms-2">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/Unit_3/Assignment_3-2/index.html" target="_blank">
+                    <img src="images/projects/summit-farms-2.jpg" alt="screen shot of summit farms version 2 home page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Summit Farms 2</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SCSS basics</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>I redesigned and coded some web pages for Summit Farms dog shelter, this time using SCSS stylesheets for the first time.</p>
+            </div>
+        </div>
+
+        <div id="summit-farms-3">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/Unit_3/Extra_credit/index.html" target="_blank">
+                    <img src="images/projects/summit-farms-3.jpg" alt="screen shot of summit farms version 3 extra credit page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Summit Farms 3</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SCSS</span>
+                    <span>mixins</span>
+                    <span>variables</span>
+                    <span>inheritance</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>As extra credit, I wanted to challenge myself to make a completely different design for Summit Farms while also incorporating new SCSS concepts that we didn't cover in class.</p>
+            </div>
+        </div>
+
+        <div id="piggy-bank-financial">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/Unit_7/Assignment_8-1/bank_home.html" target="_blank">
+                    <img src="images/projects/piggy-bank.jpg" alt="screen shot of piggy bank financial homework page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Piggy Bank Financial</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SCSS</span>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p>For a single home page, I combined the skills I had learned with HTML/CSS/SCSS and incorporated Bootstrap for most of the positioning and functions such as the drop down menues.</p>
+            </div>
+        </div>
+
+        <div id="cookies!">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/Unit_7/Assignment_7-3/Cookies_home.html" target="_blank">
+                    <img src="images/projects/cookies-hp.jpg" alt="screen shot of Cookies! home page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Cookies!</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>SCSS</span>
+                    <span>CSS grid</span>
+                    <span>positioning</span>
+                    <span>Photoshop</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>I designed and coded a home and order page for a ficitonal cookies store, focusing on learning how to postion elements using CSS grid.</p>
+            </div>
+        </div>
+
+        <div id="php-login-and-database">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV341/assignments/Unit_11/loginPage.php" target="_blank">
+                    <img src="images/projects/login-and-backend-database.jpg" alt="screen shot of PHP login and database assignment page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>PHP Login and Database Manipulation</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>SCSS</span>
+                    <span>PHP</span>
+                    <span>PDO statements</span>
+                    <span>form handling</span>
+                    <span>database manipulation</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>A series of assignments was combined to simulate an administration user interface that could communicate to a server database of events, allowing the addition, deletion, and update of the information.</p>
+            </div>
+        </div>
+
+        <div id="animations-and-transitions">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/Unit_10/Assignment_10-1/animation.html" target="_blank">
+                    <img src="images/projects/css-transitions-and-animations.jpg" alt="screen shot of css transitions and animations homework page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>CSS Transitions and Animations</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>SCSS</span>
+                    <span>positioning</span>
+                    <span>transitions</span>
+                    <span>animations</span>
+                    <span>JavaScript</span>
+                    <span>Adobe Illustrator</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>For a series of assignments teaching me about CSS transitions and animations, I combined all the assignments in one place where I could navigate to them easily.</p>
+            </div>
+        </div>
+
+        <div id="doogies-music-venue">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/WDV205/final_project/doogies_home.html" target="_blank">
+                    <img src="images/projects/doogies-desktop-screen-shot.jpg" alt="screen shot of Doogies Music Venue home page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>Doogies Music Venue</h3>
+                    <p>Skills:</p>
+                    <span>HTML</span>
+                    <span>SCSS</span>
+                    <span>Photoshop</span>
+                    <span>JavaScript</span>
+                    <span>Adobe Express</span>
+                    <span>transitions</span>
+                    <span>animations</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>I took my Web Design final prototype and coded it for my Advanced CSS final, incorporating everything I learned about SCSS, and also including JavaScript for functionality.</p>
+            </div>
+        </div>
+
+        <div id="ATP">
+            <div class="image-title-skills">
+                <a href="https://apstudio.website/recipe_manager/public_pages/home.html" target="_blank">
+                    <img src="images/projects/all-things-pasta-desktop-screen-shot.jpg" alt="screen shot of All Things Pasta home page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>All Things Pasta</h3>
+                    <p>Skills:</p>
+                    <span>SCSS</span>
+                    <span>responsive layout</span>
+                    <span>transitions</span>
+                    <span>JavaScript</span>
+                    <span>fetch calls</span>
+                    <span>dynamic content</span>
+                    <span>PHP</span>
+                    <span>form handling</span>
+                    <span>database manipulation</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>My combined JavaScript and PHP final in which I designed and coded the website to run on a PHP backend for this fictional pasta recipe website. I used fetch calls to dynamically populate the recipes onto the page, and I used PHP get parameters to specify which recipes should show up.</p>
+            </div>
+        </div>
+
+        <div id="MGDC">
+            <div class="image-title-skills">
+                <a href="http://mgdc.apstudio.website/" target="_blank">
+                    <img src="images/projects/mgdc-wordpress-final.jpg" alt="screen shot of Midwest Game Developers Confrence home page">
+                    <p>Visit</p>
+                </a>
+
+                <div class="title-and-skills">
+                    <h3>MGDC WordPress Website</h3>
+                    <p>Skills:</p>
+                    <span>WordPress</span>
+                    <span>themes</span>
+                    <span>plugins</span>
+                    <span>widgets</span>
+                </div>
+            </div>
+            
+
+            <div class="project-description">
+                <p>After being given all the information about a hypothetical developer's conference, I found and reworked a theme in WordPress and also added a shop and other functionalities to it.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

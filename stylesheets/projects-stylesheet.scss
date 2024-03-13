@@ -1,0 +1,222 @@
+@import 'portfolio-main-stylesheet.scss';
+
+body {
+    background-image: linear-gradient(245deg, $purple, $pink, $yellow);
+}
+
+#project-nav-side-bar {
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    ul {
+        position: absolute;
+        right: 2.5em;
+        list-style: none;
+        text-align: right;
+
+        li{ 
+            padding: 0.5em 0;
+
+            a {
+                text-decoration: none;
+                color: $dark-purple;
+                padding: 0.2em 1em 0.2em 2em;
+                border-radius: $pill-radius;
+            }
+            a:hover {
+                background-color: $yellow-transparent;
+            }
+            a.active {
+                background-color: $yellow-transparent;
+            }
+        }
+    }
+    p {
+        display: none;
+        position: absolute;
+        right: 0;
+        padding: 0.25em 0.25em 0 0.25em;
+        background-color: $off-white-transparent;
+        color: $dark-purple;
+
+        img {
+            height: 2em;
+        }
+    }
+}
+
+#all-projects-container {
+    width: 75vw;
+
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10vw 3.5em;
+        padding-top: 15vw;
+        margin-bottom: 10vw;
+
+        h3 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        div.image-title-skills {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            a {
+                border-radius: 25px;
+                width: 30vw;
+                height: 17vw;
+                position: relative;
+                margin-right: 2em;
+    
+                img {
+                    width: 30vw;
+                    height: 17vw;
+                    border-radius: 25px;
+                    @include subtle-shadow();
+                }
+                p {
+                    width: 30vw;
+                    height: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $purple-transparent;
+                    border-radius: 25px;
+                    font-size: 1.5em;
+                    color: $dark-purple;
+                    transition: height 0.3s ease-in;
+                    z-index: 2;
+                }
+            }
+            
+            a:hover {
+                p {
+                    height: 17vw;
+                }
+            }
+            div.title-and-skills {
+                p {
+                    font-size: 1.3em;
+                    line-height: 1.5em;
+                }
+                span {
+                    display: inline-block;
+                    border-radius: $pill-radius;
+                    padding: 0.2em 2em;
+                    margin: 0.2em;
+                    @include subtle-shadow;
+                }
+                span:nth-child(3n) {
+                    background-color: $yellow;
+                }
+                span:nth-child(3n+1) {
+                    background-color: $pink;
+                }
+                span:nth-child(3n+2) {
+                    background-color: $purple;
+                }
+            }
+        }
+        div.project-description {
+            p {
+                font-size: 1.3em;
+                line-height: 1.5em;
+                margin: 2em 0;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    #all-projects-container {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #project-nav-side-bar {
+        ul {
+            width: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: $off-white-transparent;
+            right: 0;
+            bottom: 0;
+            padding-top: 35vw;
+            transition: width 0.35s linear;
+        }
+        ul.expand-second-nav {
+            width: 100%;
+        }
+        p {
+            display: block;
+            z-index: 5;
+            transition: transform 0.35s linear;
+        }
+        p.slide-arrow-left {
+            transform: translateX(-87vw) rotateZ(180deg);
+        }
+    }
+    #project-nav-side-bar.covers-page {
+        z-index: 3;
+    }
+    #all-projects-container {
+        width: 100%;
+        padding: 25vw 0;
+
+        > div {
+            flex-direction: column;
+            padding: 15vw 2em;
+            margin-bottom: 55vw;
+
+            div.image-title-skills {
+                flex-direction: column;
+                align-items: flex-start;
+
+                h3 {
+                    margin-top: 2em;
+                }
+                a {
+                    width: 85vw;
+                    height: 45vw;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    p {
+                        width: 100%;
+                        height: fit-content;
+                        border-radius: 0;
+                        top: 20vw;
+                    }
+                }
+            }
+            
+            div.project-description {
+                padding-left: 0;
+                padding-top: 10vw;
+
+                p {
+                    margin: 1em 0;
+                }
+            }
+        }
+    }
+}

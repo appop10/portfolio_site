@@ -1,0 +1,315 @@
+@import 'portfolio-main-stylesheet.scss';
+
+
+#introduction-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    margin-top: 3vw;
+
+    div {
+        width: 60%;
+        padding: 3em;
+        margin-left: 2em;
+
+        h2 {
+            font-size: 2.3em;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.75em;
+            margin-bottom: 1.5em;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.7em;
+        }
+    }
+}
+
+#skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $off-white-transparent;
+    padding: 5em 0;
+    margin: 15vw 0;
+    width: 100%;
+
+    h2,
+    div.skill-pills {
+        width: fit-content;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    div.skill-pills {
+        div {
+            display: flex;
+
+            p {
+                font-size: 1.3em;
+                border-radius: $pill-radius;
+                background-color: $yellow;
+                padding: 0.5em 3em;
+                margin: 1.5em 1em 0 0;
+                @include subtle-shadow();
+            }
+
+            p:nth-child(2) {
+                background-color: $pink;
+            }
+
+            p:nth-child(3) {
+                background-color: $purple;
+            }
+        }
+    }
+}
+
+div.description-container {
+    width: 73%;
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+}
+
+#projects-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.project-link-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        div {
+            width: 27vw;
+            margin: 0 2vw;
+
+            a {
+                position: relative;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 14vw;
+                    border-radius: 25px;
+                    @include subtle-shadow();
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 0.2vw;
+                    font-size: 1.5em;
+                    background-color: $purple;
+                    height: 14.1vw;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $dark-purple;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in;
+                    border-radius: 25px;
+                }
+
+                p:hover {
+                    opacity: 100%;
+                }
+            }
+
+            p {
+                padding: 1em;
+            }
+        }
+    }
+
+    div.description-container {
+        background-color: $off-white-transparent;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3em 0 1em 0;
+
+        h2,
+        p {
+            width: 73%;
+        }
+
+        p {
+            margin-bottom: 2em;
+        }
+
+        a[href|="projects.html"] {
+            background-color: $purple-transparent;
+            border-radius: $pill-radius;
+            text-decoration: none;
+            color: $dark-purple;
+            padding: 0.5em 3em;
+            @include subtle-shadow();
+        }
+
+        a[href|="projects.html"]:hover {
+            background-color: $purple;
+        }
+    }
+}
+
+#homework-pages-container {
+    margin-top: 15vw;
+    padding: 5em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div.homework-pages-link {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 2em;
+
+        a {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 25px;
+                @include subtle-shadow();
+            }
+        }
+
+        p {
+            margin: 0.5em 1em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    #introduction-container {
+        margin-top: 10vw;
+        width: 75%;
+    }
+
+    #skills-container {
+        margin-top: 10vw;
+    }
+
+    div.description-container {
+        width: 50%;
+
+    }
+
+    #projects-container {
+        div.project-link-container {
+            div {
+                width: 18vw;
+                margin-bottom: 2vw;
+
+                a {
+                    img {
+                        height: 10vw;
+                    }
+
+                    p {
+                        height: 10vw;
+                    }
+                }
+            }
+        }
+
+        div.description-container {
+
+            h2,
+            p {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #introduction-container {
+        flex-direction: column;
+        padding-top: 30vw;
+
+        div {
+            width: 90%;
+            padding: 0;
+            margin-left: 0;
+            margin-top: 2em;
+        }
+    }
+    #skills-container {
+        align-items: flex-start;
+        overflow: auto;
+        padding: 5em 2em;
+
+        h2::after {
+            content: '→';
+            margin-left: 1em;
+        }
+        div.skill-pills {
+            display: flex;
+            position: relative;
+        
+            div {
+                flex-direction: column;
+
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+    div.description-container {
+        width: 100%;
+    }
+    #projects-container {
+        div.project-link-container {
+            flex-direction: column;
+
+            div {
+                width: 85vw;
+                margin: 2vw 0;
+
+                a {
+                    img {
+                        height: 50vw;
+                    }
+                    p {
+                        opacity: 100%;
+                        border-radius: 0;
+                        bottom: 5vw;
+                    }
+                }
+            }
+        }
+    }
+
+    #homework-pages-container {
+        padding: 5em 2em;
+
+        div.homework-pages-link {
+            width: 95%;
+        }
+    }
+}

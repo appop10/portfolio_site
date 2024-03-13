@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio site design page for Abby Poplawski">
+    <title>Extras | AP Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+
+    <link rel="stylesheet" href="stylesheets/extras-stylesheet.css">
+    <script src="js-files/main-functions.js"></script>
+    <script src="js-files/extras-functions.js"></script>
+</head>
+
+<body onload="pageLoad()">
+    <nav>
+        <div class="element-wrapper">
+            <div class="main-menu">
+                <p>
+                    <img src="images/logos/ap-logo-skinny.png" alt="AP studio logo">
+                    <img src="images/logos/ap-hamburger-menu.png" alt="hamburger menu icon">
+                </p>
+                <ul>
+                    <li><a href="index.html">Hello</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active"><a href="extras.html">Extras</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="resume-button-container"><a href="Abigail-Poplawski-Resume.pdf" target="_blank">Resume</a></div>
+        </div>
+    </nav>
+
+    <footer>
+        <a href="https://github.com/appop10?tab=repositories" target="_blank"><img src="images/logos/github-icon.png"
+                alt="GitHub logo"></a>
+        <a href="https://www.linkedin.com/in/abigail-poplawski/" target="_blank"><img
+                src="images/logos/linkedin-icon.png" alt="LinkedIn logo"></a>
+    </footer>
+
+    <section class="page-description">
+        <h1>Other Things I'm Doing</h1>
+        <p>Outside of school, I've explored more JavaScript, solved some programming riddles, and joined a book club to make sure I keep practicing the skills I've acquired and to learn some new ones along the way.</p>
+    </section>
+
+    <div class="activities-images-titles">
+        <div class="image-text-wrapper">
+            <img src="images/freeCodeCamp-screen-shot.jpg" alt="screen shot of freeCodeCamp certificates page" class="selected" onclick="generateContent(0)">
+            <div class="dot-indicator selected"></div>
+        </div>
+
+        <div class="image-text-wrapper">
+            <img src="images/advent-of-code-screen-shot.jpg" alt="screen shot of advent of code 2023 homepage" onclick="generateContent(1)">
+            <div class="dot-indicator"></div>
+        </div>
+
+        <div class="image-text-wrapper">
+            <img src="images/gcbc-screen-shot.jpg" alt="screen shot of good code bad code book cover" onclick="generateContent(2)">
+            <div class="dot-indicator"></div>
+        </div>
+    </div>
+
+    <section class="description-container">
+        <div class="description-content-wrapper animate-in">
+            <h2>freeCodeCamp</h2>
+            <p>I wanted practice using the map(), filter(), and reduce() functions that were briefly introduced to me in school, so I started working my way through the JavaScript Algorithms and Data Structures Certification offered by freedCodeCamp. It was a great way to review some of the basics that I had already learned and practice some things that I needed to improve on.</p>
+        </div>
+    </section>
+</body>
+</html>
