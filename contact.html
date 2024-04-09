@@ -43,9 +43,28 @@
                 src="images/logos/linkedin-icon.png" alt="LinkedIn logo"></a>
     </footer>
 
-    <section>
-        <h1>Page Comming Soon</h1>
-        <img src="images/smiley-face.png" alt="smiley face">
-    </section>
+    <form method="post" action="contactHandler.php">
+        <legend></legend>
+
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+
+        <label for="contactEmail">Email Address</label>
+        <input type="email" name="contactEmail" id="contactEmail" placeholder="example@email.com">
+
+        <label for="messageSubject">Subject</label>
+        <input type="text" name="messageSubject" id="messageSubject" placeholder="Hello, Abby">
+
+        <label for="messageText">Message</label>
+        <textarea name="messageText" id="messageTExt" maxlength="250" placeholder="Max 250 characters" rows="5" cols="35"></textarea>
+
+        <div class="g-recaptcha" data-sitekey="6Lcd80AlAAAAAPenXW_oTbdHWAaZtgcMBCFOeBqf"></div>
+
+        <input type="submit" name="submit" id="submit" value="Send">
+        <input type="reset" name="reset" id="reset">
+    </form><!-- close form -->
 </body>
 </html>
