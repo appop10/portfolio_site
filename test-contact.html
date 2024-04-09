@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio site design page for Abby Poplawski">
+    <title>Contact | Abigail Poplawski Portfolio Site</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logos/ap-long-logo-w-background.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+
+    <link rel="stylesheet" href="stylesheets/contact-stylesheet.css">
+    <script src="js-files/main-functions.js"></script>
+</head>
+
+<body onload="pageLoad()">
+    <nav>
+        <div class="element-wrapper">
+            <div class="main-menu">
+                <p>
+                    <img src="images/logos/ap-logo-skinny.png" alt="AP studio logo">
+                    <img src="images/logos/ap-hamburger-menu.png" alt="hamburger menu icon">
+                </p>
+                <ul>
+                    <li><a href="index.html">Hello</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="extras.html">Extras</a></li>
+                    <li class="active"><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="resume-button-container"><a href="Abigail-Poplawski-Resume.pdf" target="_blank">Resume</a></div>
+        </div>
+    </nav>
+
+    <footer>
+        <a href="https://github.com/appop10?tab=repositories" target="_blank"><img src="images/logos/github-icon.png"
+                alt="GitHub logo"></a>
+        <a href="https://www.linkedin.com/in/abigail-poplawski/" target="_blank"><img
+                src="images/logos/linkedin-icon.png" alt="LinkedIn logo"></a>
+    </footer>
+
+    <form method="post" action="contact.php" class="form">
+        <legend>Message Me</legend>
+
+        <div class="form-row">
+            <div class="form-unit">
+                <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name">
+            </div>
+
+            <div class="form-unit">
+                <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-unit">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" name="contactEmail" id="contactEmail" placeholder="example@email.com">
+            </div>
+
+            <div class="form-unit contact-method-box">
+                <label for="contactPhone">Phone Number</label>
+            <input type="tel" name="contactPhone" id="contactPhone" placeholder="123-456-7890">
+            </div>
+        </div>
+
+        <div class="form-row contact-method-box">
+            <p>Preferred Contact Method</p>
+            <input type="radio" name="preferredContact" id="preferredEmail" value="email">
+            <label for="preferredEmail">Email</label>
+            <input type="radio" name="preferredContact" id="preferredPhone" value="phone">
+            <label for="preferredPhone">Phone</label>
+        </div>
+
+        <div class="form-row">
+            <div class="form-unit">
+                <label for="messageSubject">Subject</label>
+            <input type="text" name="messageSubject" id="messageSubject" placeholder="Hello, Abby">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-unit">
+                <label for="messageText">Message</label>
+            <textarea name="messageText" id="messageText" maxlength="250" rows="5"
+                cols="35"></textarea>
+            </div>
+        </div>
+
+        <div class="form-row button-box">
+            <input type="submit" name="submit" id="submit" value="Send">
+            <input type="reset" name="reset" id="reset">
+        </div>
+    </form><!-- close form -->
+</body>
+
+</html>

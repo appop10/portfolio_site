@@ -1,25 +1,80 @@
 @import 'portfolio-main-stylesheet.scss';
 
 
-@keyframes spinning {
-    0% {transform: rotate(0)}
-    100% {transform: rotate(360deg)}
-}
-
-section {
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    background-color: $off-white-transparent;
+    padding: 3em;
+    width: 60%;
+    margin: 5em auto;
+    border-radius: 10px;
+    @include subtle-shadow();
 
-    h1 {
-        margin: 2em;
-    }
-    img {
-        animation-name: spinning;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
+    legend {
+        font-size: 1.5em;
+        margin-bottom: 1em;
     }
 }
+
+.form-row {
+    display: flex;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.form-unit {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 1em;
+    font-size: 1.2em;
+
+    input {
+        background-color: $off-white-transparent;
+        border: 1px solid $dark-purple;
+        border-style: none none solid none;
+        font-size: 0.85em;
+        margin: 0.5em 0;
+        color: $dark-purple;
+        padding: 0.5em;
+    }
+    textarea {
+        background-color: $off-white-transparent;
+        border: 1px solid $dark-purple;
+        border-radius: 5px;
+        font-size: 1.1em;
+        margin: 0.5em 0;
+        color: $dark-purple;
+        padding: 0.5em;
+        resize: none;
+    }
+}
+
+.contact-method-box {
+    display: none;
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        background-color: $purple-transparent;
+        border: none;
+        border-radius: $pill-radius;
+        font-size: 1.2em;
+        margin: 0.5em;
+        color: $dark-purple;
+        padding: 0.5em 2em;
+    }
+    input:hover {
+        cursor: pointer;
+        background-color: $purple;
+        @include subtle-shadow();
+    }
+}
+
