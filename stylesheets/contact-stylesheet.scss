@@ -1,5 +1,12 @@
 @import 'portfolio-main-stylesheet.scss';
 
+.form-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
 
 .form {
     display: flex;
@@ -16,6 +23,10 @@
     legend {
         font-size: 1.5em;
         margin-bottom: 1em;
+    }
+    p {
+        font-size: 1.2em;
+        line-height: 1.5em;
     }
 }
 
@@ -50,6 +61,7 @@
         color: $dark-purple;
         padding: 0.5em;
         resize: none;
+        width: 100%;
     }
 }
 
@@ -78,3 +90,48 @@
     }
 }
 
+@media only screen and (min-width: 1300px) {
+    .form {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .form {
+        width: 80%;
+        margin: 10em auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .form {
+        width: 90%;
+    }
+    .name-box {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-top: 0.75em;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .form {
+        padding: 1em;
+
+        legend {
+            margin-top: 1em;
+        }
+    }
+    .form-unit {
+        font-size: 1em;
+    }
+    .button-box {
+        input {
+            font-size: 1em;
+            padding: 0.5em 1em;
+        }
+    }
+}

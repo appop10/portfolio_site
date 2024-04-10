@@ -2,9 +2,12 @@
 
 $formSubmitted = false;
 $confirmationMessage = "";
+$legendMessage = "";
 
 if (isset($_POST["submit"])) {
     $formSubmitted = true;
+    $contactDate = date_create();
+    $formatContactDate = date_format($contactDate, "D, m-d-Y");
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     $contactEmail = $_POST["contactEmail"];
@@ -12,22 +15,26 @@ if (isset($_POST["submit"])) {
     $messageText = $_POST["messageText"];
 
     if (empty($_POST["contactPhone"]) && empty($_POST["preferredContact"])) {
-        $to = "appoplawski10@gmail.com";
+        $to = "contact@apstudio.website";
         $subject = "$messageSubject";
-        $message = "$messageText";
+        $message = "$messageText" . "\n". "Sender Name: $firstName $lastName". "\n" . "Sender Email: $contactEmail";
         $message = wordwrap($message, 70);
-        $headers = "From: $contactEmail";
+        $headers = "From: AP Studio Portfolio <contact@apstudio.website>";
 
-        $confirm = mail($to, $subject, $message, $headers);
+        try {
+            $confirm = mail($to, $subject, $message, $headers);
+        } catch (Exception $e) {
+            $confirm = false;
+        }
 
-        if ($confirm == true) {
+        if ($confirm) {
             $legendMessage = "Message Sent!";
 
             $confirmationMessage = "Hello $firstName $lastName,<br><br>Thank you for your message! I'll take a look at it and get back to you as soon as I can. Here's what you sent:<br><br> Contact Name: $firstName $lastName<br> Contact Email: $contactEmail<br> Message Subject: $messageSubject<br> Message: $messageText";
         } else {
             $legendMessage = "Please confirm";
 
-            $confirmationMessage = "Hello $firstName $lastName,<br><br>Thank you for trying to contact me! It's seems there's a problem with sending your message. Here's what you tried to send:<br><br> Contact Name: $firstName $lastName<br> Contact Email: $contactEmail<br> Message Subject: $messageSubject<br> Message: $messageText";
+            $confirmationMessage = "Hello $firstName $lastName,<br><br>Thank you for trying to contact me! It's seems there's a problem with sending your message. Here's what you tried to send:<br><br>Contact Name: $firstName $lastName<br> Contact Email: $contactEmail<br> Message Subject: $messageSubject<br> Message: $messageText";
         }
     } else {
         die("Invalid form submission, stopping program");
@@ -79,50 +86,77 @@ if (isset($_POST["submit"])) {
         <a href="https://www.linkedin.com/in/abigail-poplawski/" target="_blank"><img src="images/logos/linkedin-icon.png" alt="LinkedIn logo"></a>
     </footer>
 
-    <?php 
-        if ($formSubmitted == true) {
-    ?>
-    <form>
-        <legend><?php echo $legendMessage; ?></legend>
-        <p><?php echo $confirmationMessage; ?></p>
-
-    </form><!-- close form -->
     <?php
-        } else {
+    if ($formSubmitted == true) {
+    ?>
+        <div class="form-holder">
+        <form class="form">
+            <legend><?php echo $legendMessage; ?></legend>
+            <p><?php echo $confirmationMessage; ?></p>
+
+        </form><!-- close form -->
+        </div>
+    <?php
+    } else {
 
     ?>
-    <form method="post" action="contact.php">
-        <legend>Message Me</legend>
+        <form method="post" action="contact.php" class="form">
+            <legend>Message Me</legend>
 
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+            <div class="form-row name-box">
+                <div class="form-unit">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                </div>
 
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+                <div class="form-unit">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+                </div>
+            </div>
 
-        <label for="contactEmail">Email Address</label>
-        <input type="email" name="contactEmail" id="contactEmail" placeholder="example@email.com">
+            <div class="form-row">
+                <div class="form-unit">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" name="contactEmail" id="contactEmail" placeholder="example@email.com">
+                </div>
 
-        <label for="contactPhone">Phone Number</label>  
-        <input type="tel" name="contactPhone" id="contactPhone" placeholder="123-456-7890">
+                <div class="form-unit contact-method-box">
+                    <label for="contactPhone">Phone Number</label>
+                    <input type="tel" name="contactPhone" id="contactPhone" placeholder="123-456-7890">
+                </div>
+            </div>
 
-        <label for="preferredContact">Preferred Contact Method</label>
-        <input type="radio" name="preferredContact" id="preferredEmail" value="email">
-        <label for="preferredEmail">Email</label>
-        <input type="radio" name="preferredContact" id="preferredPhone" value="phone">
-        <label for="preferredPhone">Phone</label>
+            <div class="form-row contact-method-box">
+                <p>Preferred Contact Method</p>
+                <input type="radio" name="preferredContact" id="preferredEmail" value="email">
+                <label for="preferredEmail">Email</label>
+                <input type="radio" name="preferredContact" id="preferredPhone" value="phone">
+                <label for="preferredPhone">Phone</label>
+            </div>
 
-        <label for="messageSubject">Subject</label>
-        <input type="text" name="messageSubject" id="messageSubject" placeholder="Hello, Abby">
+            <div class="form-row">
+                <div class="form-unit">
+                    <label for="messageSubject">Subject</label>
+                    <input type="text" name="messageSubject" id="messageSubject" placeholder="Hello, Abby">
+                </div>
+            </div>
 
-        <label for="messageText">Message</label>
-        <textarea name="messageText" id="messageTExt" maxlength="250" placeholder="Max 250 characters" rows="5" cols="35"></textarea>
+            <div class="form-row">
+                <div class="form-unit">
+                    <label for="messageText">Message</label>
+                    <textarea name="messageText" id="messageText" maxlength="250" rows="5" cols="35"></textarea>
+                </div>
+            </div>
 
-        <input type="submit" name="submit" id="submit" value="Send">
-        <input type="reset" name="reset" id="reset">
-    </form><!-- close form -->
+            <div class="form-row button-box">
+                <input type="submit" name="submit" id="submit" value="Send">
+                <input type="reset" name="reset" id="reset">
+            </div>
+        </form><!-- close form -->
     <?php
-        }
+    }
     ?>
 </body>
+
 </html>
