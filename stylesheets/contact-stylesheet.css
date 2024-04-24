@@ -64,21 +64,19 @@ nav div.element-wrapper div.main-menu ul {
   position: relative;
   left: -3.5em;
 }
-nav div.element-wrapper div.main-menu ul li {
-  padding: 0.5em 2em;
-  margin: 0 0.5em;
-  border-radius: 30px;
-  transition: background-color 0.3s linear;
-}
 nav div.element-wrapper div.main-menu ul li a {
+  border-radius: 30px;
+  padding: 0.5em 2em;
   text-decoration: none;
   color: #2A0031;
   font-weight: 700;
+  margin: 0 0.5em;
+  transition: background-color 0.3s linear;
 }
-nav div.element-wrapper div.main-menu ul li.active {
+nav div.element-wrapper div.main-menu ul a.active {
   background-color: #FCAAAB;
 }
-nav div.element-wrapper div.main-menu ul li:hover {
+nav div.element-wrapper div.main-menu ul a:hover {
   background-color: rgba(252, 170, 171, 0.5529411765);
 }
 nav div.element-wrapper div.resume-button-container {

@@ -77,21 +77,20 @@ nav {
                 left: -3.5em;
     
                 li {
-                    padding: 0.5em 2em;
-                    margin: 0 0.5em;
-                    border-radius: $pill-radius;
-                    transition: background-color 0.3s linear;
-    
                     a {
+                        border-radius: $pill-radius;
+                        padding: 0.5em 2em;
                         text-decoration: none;
                         color: $dark-purple;
                         font-weight: 700;
+                        margin: 0 0.5em;
+                        transition: background-color 0.3s linear;
                     }
                 }
-                li.active {
+                a.active {
                     background-color:$pink;
                 }
-                li:hover {
+                a:hover {
                     background-color: $pink-transparent;
                 }
             }
