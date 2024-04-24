@@ -207,9 +207,12 @@ footer a img {
     opacity: 100%;
   }
 }
-@media only screen and (max-width: 400px) {
-  nav div.element-wrapper div.main-menu p img {
-    height: 2.5em;
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 0.5em 1em;
+  }
+  nav div.element-wrapper div.main-menu p.mobile-view img {
+    height: 2em;
   }
   nav div.element-wrapper div.resume-button-container a {
     font-size: 0.75em;

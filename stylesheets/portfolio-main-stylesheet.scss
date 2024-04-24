@@ -238,13 +238,15 @@ footer {
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
     nav {
+        padding: 0.5em 1em; 
+
         div.element-wrapper {
             div.main-menu {
-                p {
+                p.mobile-view {
                     img {
-                        height: 2.5em;
+                        height: 2em;
                     }
                 }
             }
