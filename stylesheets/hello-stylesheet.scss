@@ -8,6 +8,11 @@
     padding: 3em 0;
     margin-top: 3vw;
 
+    img {
+        width: 25%;
+        border-radius: 100%;
+        @include subtle-shadow();
+    }
     div {
         width: 60%;
         padding: 3em;
