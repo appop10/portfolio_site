@@ -1,7 +1,5 @@
 @import 'portfolio-main-stylesheet.scss';
 
-
-
 #introduction-container {
     display: flex;
     justify-content: center;
@@ -255,8 +253,12 @@ div.description-container {
 @media only screen and (max-width: 900px) {
     #introduction-container {
         flex-direction: column;
-        padding-top: 30vw;
+        padding-top: 25vw;
 
+        img{
+            width: 40%;
+            margin-bottom: 2em;
+        }
         div {
             width: 90%;
             padding: 0;
@@ -266,20 +268,14 @@ div.description-container {
     }
     #skills-container {
         align-items: flex-start;
-        overflow: auto;
-        padding: 5em 2em;
+        padding: 5em 3em;
 
-        h2::after {
-            content: '→';
-            margin-left: 1em;
-        }
         div.skill-pills {
             display: flex;
+            flex-direction: column;
             position: relative;
         
             div {
-                flex-direction: column;
-
                 p {
                     font-size: 1.2em;
                 }
@@ -294,12 +290,12 @@ div.description-container {
             flex-direction: column;
 
             div {
-                width: 85vw;
+                width: 65vw;
                 margin: 2vw 0;
 
                 a {
                     img {
-                        height: 50vw;
+                        height: 40vw;
                     }
                     p {
                         opacity: 100%;
@@ -316,6 +312,58 @@ div.description-container {
 
         div.homework-pages-link {
             width: 95%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #introduction-container {
+        div {
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.5em;
+                margin-bottom: 1em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+    #skills-container {
+        align-items: center;
+
+        div.skill-pills {
+            div {
+                flex-direction: column;
+
+                p {
+                    font-size: 1em;
+                    margin: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    #projects-container {
+        .description-container {
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    }
+    #homework-pages-container {
+        .description-container {
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
         }
     }
 }

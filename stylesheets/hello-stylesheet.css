@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @keyframes twist {
   0% {
     transform: rotateZ(0);
@@ -426,7 +425,11 @@ div.description-container p {
 @media only screen and (max-width: 900px) {
   #introduction-container {
     flex-direction: column;
-    padding-top: 30vw;
+    padding-top: 25vw;
+  }
+  #introduction-container img {
+    width: 40%;
+    margin-bottom: 2em;
   }
   #introduction-container div {
     width: 90%;
@@ -436,19 +439,12 @@ div.description-container p {
   }
   #skills-container {
     align-items: flex-start;
-    overflow: auto;
-    padding: 5em 2em;
-  }
-  #skills-container h2::after {
-    content: "→";
-    margin-left: 1em;
+    padding: 5em 3em;
   }
   #skills-container div.skill-pills {
     display: flex;
-    position: relative;
-  }
-  #skills-container div.skill-pills div {
     flex-direction: column;
+    position: relative;
   }
   #skills-container div.skill-pills div p {
     font-size: 1.2em;
@@ -460,11 +456,11 @@ div.description-container p {
     flex-direction: column;
   }
   #projects-container div.project-link-container div {
-    width: 85vw;
+    width: 65vw;
     margin: 2vw 0;
   }
   #projects-container div.project-link-container div a img {
-    height: 50vw;
+    height: 40vw;
   }
   #projects-container div.project-link-container div a p {
     opacity: 100%;
@@ -476,5 +472,40 @@ div.description-container p {
   }
   #homework-pages-container div.homework-pages-link {
     width: 95%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #introduction-container div h2 {
+    font-size: 2em;
+  }
+  #introduction-container div h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  #introduction-container div p {
+    font-size: 1em;
+  }
+  #skills-container {
+    align-items: center;
+  }
+  #skills-container div.skill-pills div {
+    flex-direction: column;
+  }
+  #skills-container div.skill-pills div p {
+    font-size: 1em;
+    margin: 1em;
+    text-align: center;
+  }
+  #projects-container .description-container h2 {
+    font-size: 1.5em;
+  }
+  #projects-container .description-container p {
+    font-size: 1em;
+  }
+  #homework-pages-container .description-container h2 {
+    font-size: 1.5em;
+  }
+  #homework-pages-container .description-container p {
+    font-size: 1em;
   }
 }/*# sourceMappingURL=hello-stylesheet.css.map */
